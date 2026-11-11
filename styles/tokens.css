@@ -1,0 +1,28 @@
+/* Tokens de marca: para adaptar la demo a otro cliente, cambia este archivo. */
+:root {
+  --ink: #1d1b18;
+  --ink-2: #57524a;
+  --paper: #f5f1e9;
+  --paper-2: #ebe5d8;
+  --line: #d9d1c1;
+  --dark: #15130f;
+  --dark-2: #23201b;
+  --accent: #c2673a;
+  --accent-ink: #ffffff;
+  --sky-top: #1c2433;
+  --sky-mid: #6b5b6e;
+  --sky-low: #e3a77a;
+
+  --st-disponible: #2f9e6b;
+  --st-apartada: #e0a43a;
+  --st-vendida: #a39d93;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --r: 14px;
+  --r-sm: 8px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --maxw: 1200px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}

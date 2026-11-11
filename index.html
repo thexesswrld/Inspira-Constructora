@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Residencial Mirador · Showroom virtual (demo)</title>
+  <meta name="description" content="Demostración de showroom virtual inmobiliario: recorre el conjunto en 3D, elige torre y nivel, y cotiza tu departamento.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a class="brand" href="#inicio" aria-label="Residencial Mirador, inicio">
+      <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="5" y="10" width="6" height="17" rx="1"/><rect x="13" y="4" width="6" height="23" rx="1"/><rect x="21" y="10" width="6" height="17" rx="1"/></svg>
+      <span>Mirador</span>
+    </a>
+    <nav class="nav-links" aria-label="Secciones">
+      <a href="#desarrollo">Desarrollo</a>
+      <a href="#tipologias">Tipologías</a>
+      <a href="#amenidades">Amenidades</a>
+      <a href="#cotizador">Cotizador</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-sm" href="#/orbita" data-open-showroom>Explorar en 3D</a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-sky" aria-hidden="true"></div>
+      <svg class="hero-skyline" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <g class="sky-t sky-t1"><rect x="330" y="170" width="150" height="350"/></g>
+        <g class="sky-t sky-t2"><rect x="525" y="90" width="150" height="430"/></g>
+        <g class="sky-t sky-t3"><rect x="720" y="170" width="150" height="350"/></g>
+        <g class="sky-windows"></g>
+        <rect class="sky-ground" x="0" y="500" width="1200" height="20"/>
+      </svg>
+      <div class="hero-inner">
+        <p class="eyebrow hero-in">Demo · Showroom virtual inmobiliario</p>
+        <h1 class="hero-title" data-split>Vive arriba de todo</h1>
+        <p class="hero-sub hero-in">Residencial Mirador: 3 torres y 264 residencias. Gira el conjunto en 3D, entra a cada nivel y cotiza tu departamento antes de que se construya.</p>
+        <div class="hero-ctas hero-in">
+          <a class="btn" href="#/orbita" data-open-showroom>Explorar en 3D</a>
+          <a class="btn btn-ghost" href="#cotizador">Cotizar</a>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#desarrollo" aria-label="Bajar a la siguiente sección"><span></span></a>
+    </section>
+
+    <section class="section" id="desarrollo">
+      <div class="wrap two-col">
+        <div>
+          <p class="eyebrow" data-rv>El desarrollo</p>
+          <h2 class="h2" data-split>Tres torres alrededor de un jardín central</h2>
+          <p class="lead" data-rv>Cada torre se orienta para abrir la vista al poniente. En planta baja, lobby y comercio; arriba, ocho residencias por nivel con balcón y luz natural en todos los espacios.</p>
+          <p class="note" data-rv>Proyecto ficticio con fines de demostración. Datos, precios y disponibilidad son de ejemplo.</p>
+        </div>
+        <dl class="stats">
+          <div data-rv><dt>Torres</dt><dd data-count="3">3</dd></div>
+          <div data-rv><dt>Residencias</dt><dd data-count="264">264</dd></div>
+          <div data-rv><dt>m² de amenidades</dt><dd data-count="4200">4,200</dd></div>
+          <div data-rv><dt>Entrega</dt><dd>Dic 2028</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="tipologias">
+      <div class="wrap">
+        <p class="eyebrow" data-rv>Tipologías</p>
+        <h2 class="h2" data-split>Tres formas de vivir Mirador</h2>
+        <div class="tipos" id="tipos"></div>
+      </div>
+    </section>
+
+    <section class="cta-3d" id="showroom-cta">
+      <div class="cta-3d-bg" aria-hidden="true"></div>
+      <div class="wrap cta-3d-inner">
+        <p class="eyebrow" data-rv>Showroom virtual</p>
+        <h2 class="h2" data-split>Recorre el conjunto en 3D</h2>
+        <p class="lead" data-rv>Gira las torres con el mouse o el dedo, elige un nivel y mira qué departamentos siguen disponibles.</p>
+        <a class="btn" href="#/orbita" data-open-showroom data-rv>Abrir showroom</a>
+      </div>
+    </section>
+
+    <section class="amen" id="amenidades">
+      <div class="amen-pin">
+        <div class="wrap amen-head">
+          <p class="eyebrow" data-rv>Amenidades</p>
+          <h2 class="h2" data-split>Todo lo que necesitas, sin salir</h2>
+        </div>
+        <div class="amen-track" id="amen-track"></div>
+      </div>
+    </section>
+
+    <section class="section" id="cotizador">
+      <div class="wrap two-col">
+        <div>
+          <p class="eyebrow" data-rv>Cotizador</p>
+          <h2 class="h2" data-split>Calcula tu mensualidad</h2>
+          <p class="lead" data-rv>Elige una tipología, ajusta el enganche y el plazo. Tasa fija de ejemplo; tu asesor te dará la cifra exacta.</p>
+        </div>
+        <form class="quoter card" id="quoter" data-rv onsubmit="return false">
+          <label>Tipología
+            <select id="q-tipo"></select>
+          </label>
+          <label>Enganche <output id="q-eng-o"></output>
+            <input type="range" id="q-eng">
+          </label>
+          <label>Plazo <output id="q-plazo-o"></output>
+            <input type="range" id="q-plazo">
+          </label>
+          <div class="quoter-out">
+            <div><span>Precio desde</span><strong id="q-precio">—</strong></div>
+            <div><span>Enganche</span><strong id="q-eng-v">—</strong></div>
+            <div class="big"><span>Mensualidad estimada</span><strong id="q-mens">—</strong></div>
+          </div>
+          <a class="btn btn-wa" id="q-wa" href="#" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="contacto">
+      <div class="wrap contact">
+        <h2 class="h2" data-split>¿Quieres un showroom así para tu desarrollo?</h2>
+        <p class="lead" data-rv>Esta es una demo. Lo adaptamos a tu proyecto: tus torres, tus planos, tu inventario y tus precios.</p>
+        <div class="hero-ctas" data-rv>
+          <a class="btn" id="contact-wa" href="#" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+          <a class="btn btn-ghost" href="#/orbita" data-open-showroom>Ver la demo en 3D</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">Demo de showroom virtual · Inspira Constructora · Datos ficticios</div>
+  </footer>
+
+  <!-- Showroom: capa a pantalla completa controlada por el router (#/orbita, #/torre/…, #/unidad/…) -->
+  <div class="showroom" id="showroom" hidden>
+    <header class="sr-bar">
+      <a class="brand" href="#/orbita" aria-label="Volver al conjunto">
+        <svg viewBox="0 0 32 32" width="24" height="24" aria-hidden="true"><rect x="5" y="10" width="6" height="17" rx="1"/><rect x="13" y="4" width="6" height="23" rx="1"/><rect x="21" y="10" width="6" height="17" rx="1"/></svg>
+        <span>Mirador</span>
+      </a>
+      <div class="sr-crumbs" id="sr-crumbs"></div>
+      <a class="btn btn-sm btn-ghost" href="#/" id="sr-exit">Salir</a>
+    </header>
+    <div class="sr-view" id="sr-view"></div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
